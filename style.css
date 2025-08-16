@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Utils */
+.hidden {
+  display: none;
+}
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+.flex-al-center{
+  display: flex;
+  align-items: center;
+}
+
+.link{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+:root {
+  /* Primary Gradient Colors */
+  --primary-1: #4f46e5; /* Deep Indigo */
+  --primary-2: #06b6d4; /* Bright Cyan */
+
+  /* Secondary Accent */
+  --accent: #8b5cf6; /* Purple Highlight */
+
+  /* Text Colors */
+  --text-light: #f1f5f9; /* Off-white */
+  --text-dark: #1e293b; /* Slate Blue */
+
+  /* Backgrounds */
+  --bg-dark: #0f172a; /* Almost Black */
+  --bg-light: #e2e8f0; /* Soft Gray */
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+header {
+  background: #001011;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav {
+  display: flex;
+  gap: 20px;
+  font-family: poppins;
+  align-items: center;
+  font-size: large;
+  color: #fff;
+  cursor: pointer;
+}
+
+nav img{
+  height: 30px;
+  width: 30px;
+}
+nav i{
+  color: #0072ff;
+}
+
+.logo-img {
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  align-items: center;
+  font-family: poppins;
+  gap: 10px;
+}
+
+.logo-img img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.login-page {
+  height: 90vh;
+  width: 100vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  height: 600px;
+  width: 550px;
+  background-color: var(--primary-2);
+  border-radius: 10px;
+}
+.login-form h2 {
+  font-family: sans-serif;
+  padding: 20px 0 0;
+}
+.login-form h4 {
+  font-family: sans-serif;
+  padding: 10px 50px;
+}
+
+.changing-word {
+  background: linear-gradient(90deg, #054253, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.login-input {
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 50px;
+  /* background-color:green; */
+  outline: none;
+  border: none;
+}
+.login-btn {
+  padding: 10px 5px;
+  margin: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: var(--primary-1);
+  outline: none;
+  border: 1px solid #929292;
+  color: #fffffc;
+  font-family: poppins;
+}
+.login-btn:hover {
+  background-color: #8b5cf6;
+}
+
+.ease-signup{
+    padding: 50px 0px;
+}
+
+.Google{
+    height: 50px;
+    min-width: 200px;
+    /* border: 2px solid #001011; */
+    border-radius: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: smaller;
+    gap: 12px;
+    font-weight: 600;
+    background-color: #000000;
+    margin: 10px;
+}
+.Google:hover{
+    background-color: #1e293b;
+}
+
+.Google img{
+    height: 100%;
+    width: 30px;
+}
+
+.existing-user{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 600;
+
+}
+
+/* AFTER LOGIN */
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  gap: 30px;
+  margin: 10px;
+}
+
+.chats-sidebar {
+  font-family: sans-serif;
+  border-right: 1px solid #3c3a3a;
+  padding: 1rem;
+  width: 30%;
+}
+
+.chats-sidebar h3 {
+  border-top: 1px solid #3c3a3a;
+  border-bottom: 1px solid #3c3a3a;
+  padding: 1rem;
+}
+
+.chat-rooms {
+  font-family: sans-serif;
+  /* border-right: 1px solid #3c3a3a; */
+  padding: 1rem;
+  width: 70%;
+}

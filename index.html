@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/images/favicom.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <title>chatVerse</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <div class="logo-img">
+        <img src="assets/images/chatVerseLogo.png" alt="" />
+        <span>chatVerse</span>
+      </div>
+      <nav class="navbar">
+        <p class="flex-al-center"><i class="fa-solid fa-comments"></i><span>Add+</span></p>
+        <div class="flex-al-center"><img src="assets/svg/settingSvg.svg" alt=""><span>settings</span></div>
+        <i class="fa-solid fa-moon"></i>
+      </nav>
+    </header>
+
+    <!-- SignUp Page -->
+    <div class="hidde">
+      <div class="login-page" id="signUp-page">
+        <div class="login-form" id="signUp-form">
+          <form action="" id="SignUp-form">
+            <h2 class="welcome-msg">Hey! Welcome to chatVerse.</h2>
+            <h4>
+              "Seamless Chat, Endless
+              <span class="changing-word">Connection</span>"
+            </h4>
+            <input
+              class="login-input"
+              id="singUp-user"
+              type="text"
+              placeholder="Enter Username"
+              required
+            />
+            <input
+              class="login-input"
+              id="signUp-pass"
+              type="password"
+              placeholder="password"
+              required
+            />
+
+            <button class="login-btn" id="signUp-btn">SignUp</button>
+
+            <div class="ease-signup">
+              <div class="Google">
+                <img
+                  src="assets/svg/google-logo-search-new-svgrepo-com.svg"
+                  alt=""
+                />
+                <span>SingUp with Google</span>
+              </div>
+              <div class="Google">
+                <img src="assets/svg/microsoftSVG.svg" alt="" />
+                <span>SingUp with Microsoft</span>
+              </div>
+            </div>
+
+            <div class="existing-user">
+              <p>
+                Already Have an Account? <a class="link" href="#">singIn</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Page -->
+    <div class="hidden">
+      <div class="login-page" id="login-page">
+        <div class="login-form" id="login-page">
+          <form action="" id="singIn-form">
+            <h2 class="welcome-msg">Hey! Welcome Back</h2>
+            <h4>
+              "Seamless Chat, Endless
+              <span class="changing-word">Connection</span>"
+            </h4>
+            <input
+              class="login-input"
+              id="signIn-user-mail"
+              type="text"
+              placeholder="Enter Email"
+              required
+            />
+            <input
+              class="login-input"
+              id="singIn-pass"
+              type="password"
+              placeholder="password"
+              required
+            />
+
+            <button class="login-btn">signIn</button>
+
+            <div class="ease-signup">
+              <div class="Google">
+                <img
+                  src="assets/svg/google-logo-search-new-svgrepo-com.svg"
+                  alt=""
+                />
+                <span>SingIn with Google</span>
+              </div>
+              <div class="Google">
+                <img src="assets/svg/microsoftSVG.svg" alt="" />
+                <span>SingIn with Microsoft</span>
+              </div>
+            </div>
+
+            <div class="existing-user">
+              <p>Don't Have an Account? <a class="link" href="#">singUp</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home Page After Authentication -->
+    <div class="Home-page hidden">
+      <main class="main">
+        <aside class="chats-sidebar"><h3>Hey I am side bar</h3></aside>
+        <div class="chat-rooms">This is chat room</div>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    
+  </body>
+</html>
