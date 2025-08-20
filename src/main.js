@@ -3,7 +3,12 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { signInWithEmailAndPassword,setPersistence,browserLocalPersistence } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  setPersistence,
+  browserLocalPersistence,
+  onAuthStateChanged,
+} from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,12 +27,17 @@ const firebaseConfig = {
 
 // Selectors
 const wordElement = document.querySelectorAll(".changing-word");
-const signInForm = document.getElementById("signIn-form")
-const signInMail = document.getElementById("signIn-user-mail")
-const signInPass = document.getElementById("signIn-pass")
+const signInPage = document.getElementById("singIn-page");
+const signUpPage = document.getElementById("singUp-page1");
+const signInForm = document.getElementById("signIn-form");
+const signInMail = document.getElementById("signIn-user-mail");
+const signInPass = document.getElementById("signIn-pass");
+const signInLink = document.getElementById("signIn-link");
+const signUpLink = document.getElementById("singUp-link");
+const userChats = document.querySelectorAll(".user-chats");
+const homePage = document.querySelector(".Home-page");
 
-
-
+let isSignedIn = false;
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
@@ -63,6 +73,25 @@ document.getElementById("signUp-btn").addEventListener("click", () => {
     });
 });
 
+// singIN Handler
+signInForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  // errorElement ---- do later
+
+  const email = signInMail.value.trim();
+  const pass = signInPass.value;
+
+  try {
+    // await setPersistence(auth,rem)
+    const { user } = await signInWithEmailAndPassword(auth, email, pass);
+    // success
+    alert("Welcome Back " + (user.email || "user") + "!");
+    isSignedIn = true;
+  } catch (error) {
+    console.error("Error Code: ", error.code);
+    console.error("Error Message: ", error.message);
+  }
+});
 
 // Word ring Login/SignUp
 const words = [
@@ -93,3 +122,40 @@ setInterval(() => {
   }, 300);
   index = (index + 1) % words.length;
 }, 1000);
+
+// SignIn link setUp
+signInLink.addEventListener("click", () => {
+  signUpPage.classList.add("hidden");
+  signInPage.classList.remove("hidden");
+});
+signUpLink.addEventListener("click", () => {
+  signUpPage.classList.remove("hidden");
+  signInPage.classList.add("hidden");
+});
+
+// Chats Section
+
+// Active chats
+userChats.forEach((chats, index) => {
+  chats.addEventListener("click", () => {
+    userChats.forEach((c) => {
+      c.classList.remove("active-chat");
+    });
+    chats.classList.add("active-chat");
+    chats.classList.remove("hover-chat");
+    console.log(chats.textContent, index);
+  });
+});
+
+// After signedIn Authentication using fire
+onAuthStateChanged(auth,(user)=>{
+  if(user){
+    // signedIn
+    console.log("SignedIn as: ",user.email)
+    homePage.classList.remove("hidden")
+    signInPage.classList.add("hidden")
+  }else{
+    signInPage.classList.remove("hidden")
+    homePage.classList.add("hidden")
+  }
+})
