@@ -23,7 +23,7 @@
           <i class="fa-solid fa-comments"></i><span>Add+</span>
         </p>
         <div class="flex-al-center">
-          <img src="assets/svg/settingSvg.svg" alt="" /><span>settings</span>
+          <span id="user-details"><i class="fa-solid fa-user"></i></span>
         </div>
         <i class="fa-solid fa-moon"></i>
       </nav>
@@ -77,6 +77,15 @@
             </p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- UserName for new users -->
+    <div class="hidden">
+      <div class="name-card">
+        <p>Create User Name</p>
+        <input type="text" placeholder="Enter a UserName" required />
+        <button>Enter</button>
       </div>
     </div>
 
@@ -135,7 +144,11 @@
     <main class="Home-page hidden">
       <section>
         <div class="side-nav">
-          <p><i class="fa-solid fa-comment"></i></p>
+          <p id=""><i class="fa-solid fa-comment"></i></p>
+          <p id="app-settings">
+            <img src="assets/svg/settingSvg.svg" alt="setting" />
+          </p>
+          <p id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i></p>
         </div>
         <div class="chats-section">
           <div class="chat-search">
@@ -179,74 +192,44 @@
             <span>Pro</span>
             <p>Aftab</p>
           </div>
-          <div class="msg-area">
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-              incidunt dolores provident quo voluptatibus velit dolorem, qui
-              quidem error minus voluptates, quam ipsam placeat numquam fugit
-              impedit rerum vero magni, deserunt at minima? Vero aut officia
-              quas et facilis voluptates nesciunt laudantium odio nostrum
-              expedita incidunt cupiditate dolorum aliquam, saepe cumque autem,
-              distinctio fuga aperiam. Aliquid fuga omnis voluptas recusandae
-              quas quasi mollitia, reprehenderit similique magnam dicta
-              voluptatibus eius quis excepturi cumque quia commodi dolorum, sunt
-              dolore obcaecati expedita harum. Illum vel quibusdam reiciendis
-              quam beatae eveniet dignissimos, ipsa a eius aut expedita iusto
-              perferendis velit totam voluptas quo repellendus placeat culpa at
-              nobis provident. Veritatis tempora impedit vero maiores, officiis
-              voluptas deserunt fugit expedita et non magni laudantium
-              blanditiis unde dicta voluptatum labore suscipit dolorum
-              asperiores cum. Ab id esse ullam quaerat impedit harum, pariatur
-              quas optio et totam, qui fugit eligendi atque illum nesciunt
-              
-            </p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Obcaecati, sunt! Corrupti debitis nihil accusamus ducimus
-              doloribus vitae necessitatibus dignissimos ipsam deserunt, quia,
-              ut qui voluptates laboriosam soluta aspernatur non ex nemo?
-              Dolorum molestias inventore eum vero sed provident repellat,
-              tenetur est, deserunt quae delectus voluptates sequi perferendis
-              temporibus! Blanditiis possimus magni repellendus labore ratione
-              officia laboriosam sunt natus doloribus aliquam doloremque
-              eligendi numquam totam asperiores, nulla soluta quas consequuntur
-              rem ab vel minus sit quisquam maxime aut. Ea nisi voluptatibus
-              fuga aspernatur nam minus id facilis repellat, molestias
-              reprehenderit doloribus velit vel, ullam aperiam officia harum, a
-              debitis tempore explicabo!
-            </p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
-            <p class="sent-msg">Hii</p>
-            <p class="reply-msg">Hellog</p>
+          <div class="msg-area" id="msg-area">
+            <!-- msgs -->
+            <div class="reply-msg">hello</div>
           </div>
           <div class="msg-input">
-            <input type="text" placeholder="Enter the message" />
-            <button class="msg-send-btn">
+            <input type="text" placeholder="Enter the message" id="msg-input" />
+            <button class="msg-send-btn" id="msg-send-btn">
               <i class="fa-solid fa-paper-plane"></i>
             </button>
           </div>
         </div>
       </section>
     </main>
+
+    <div class="hidden" id="user-card">
+      <div class="user-data">
+        <img
+          id="profileImg"
+          src="assets/svg/default.svg"
+          alt=""
+        />
+        <p class="user-profile-name" id="user-profile-name">Aftab</p>
+        <p class="user-id">User Id:<span> abi705251</span></p>
+        <p class="about-user" id="about-user">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos,
+          itaque.
+        </p>
+        <!-- Hidden file input for uploading image -->
+        <input
+          type="file"
+          id="imgInput"
+          accept="image/*"
+          style="display: none"
+        />
+
+        <button id="edit-btn">Edit Profile</button>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

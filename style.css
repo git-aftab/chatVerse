@@ -58,32 +58,32 @@
 
 /* Scrollbar width */
 ::-webkit-scrollbar {
-  width: 7px;   /* thin scrollbar */
+  width: 7px; /* thin scrollbar */
 }
 
 /* Scrollbar track (background) */
 ::-webkit-scrollbar-track {
-  background: #1e1e2f;   /* match your app bg */
+  background: #1e1e2f; /* match your app bg */
 }
 
 /* Scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background: #3a3a4f;   /* slightly lighter than bg */
-  border-radius: 10px;   /* rounded scrollbar */
+  background: #3a3a4f; /* slightly lighter than bg */
+  border-radius: 10px; /* rounded scrollbar */
 }
 
 /* Scrollbar thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #5a5a7f;   /* brighter on hover */
+  background: #5a5a7f; /* brighter on hover */
 }
-
 
 body {
   background: var(--bg-dark);
+  position: relative;
   color: var(--text-light);
   /* overflow-y: hidden; */
   overflow-x: hidden;
-  height: 100vh;  /* Fixes height to viewport */
+  height: 100vh; /* Fixes height to viewport */
 }
 
 header {
@@ -98,7 +98,7 @@ nav {
   display: flex;
   gap: 20px;
   font-family: poppins;
-  
+
   align-items: center;
   font-size: large;
   color: #fff;
@@ -231,6 +231,53 @@ nav i {
   cursor: pointer;
 }
 
+.name-card {
+  height: 300px;
+  position: absolute;
+  transform: (50%, -50%);
+  top: 30%;
+  left: 40%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #06b6d4;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.name-card input {
+  padding: 10px 5px;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  font-size: medium;
+  font-family: sans-serif;
+}
+
+.name-card button {
+  margin: 10px;
+  padding: 10px 5px;
+  background-color: #0072ff;
+  color: #fff;
+  font-size: medium;
+  font-family: sans-serif;
+  /* font-weight:600 ; */
+  border-radius: 0.5rem;
+  border: none;
+}
+.name-card button:hover {
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+.name-card p {
+  font-size: x-large;
+  font-family: sans-serif;
+  color: #fff;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
 /* AFTER LOGIN */
 
 main {
@@ -245,7 +292,7 @@ section {
   /* gap: 40px; */
 }
 .side-nav {
-  height: 100vh;
+  height: 106vh;
   min-width: 4vw;
   background-color: #001011;
   display: flex;
@@ -255,8 +302,16 @@ section {
   /* margin: 10px; */
 }
 .side-nav i {
+  margin: 10px 0;
   font-size: larger;
   color: #0072ff;
+  cursor: pointer;
+}
+.side-nav img {
+  height: 28px;
+  width: 28px;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
 .chats-section {
@@ -264,6 +319,7 @@ section {
   border-right: 1px solid #2e3238;
   border-top-right-radius: 5px;
   overflow-y: auto;
+  overflow-x: hidden;
   /* padding: 10px 0 ; */
 }
 .chats-section p {
@@ -273,7 +329,6 @@ section {
   transition: all 0.3s ease;
   border-radius: 5px;
 }
-
 
 .chat-search {
   display: flex;
@@ -302,9 +357,10 @@ section {
   cursor: pointer;
 }
 
-.chat-list{
+.chat-list {
   max-height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .chat-area-header {
@@ -337,7 +393,7 @@ section {
 
 .msg-area {
   max-height: calc(100vh - 6vh);
-  padding: 30px ;
+  padding: 30px;
   overflow-y: auto;
   overflow-x: hidden;
   margin-top: 10px;
@@ -347,17 +403,17 @@ section {
   flex-direction: column;
 }
 
-
 .sent-msg {
   background: #4a90e2;
   color: #fff;
+  font-family: sans-serif;
   padding: 8px 12px;
   border-radius: 12px 12px 0 12px;
   margin: 5px 0;
   max-width: 70%;
   display: flex;
   flex-wrap: nowrap;
-  align-self:flex-end;
+  align-self: flex-end;
   font-size: medium;
 }
 
@@ -375,7 +431,7 @@ section {
   font-family: sans-serif;
 }
 
-.msg-input{
+.msg-input {
   height: 6vh;
   background: #000;
   width: 75vw;
@@ -383,32 +439,80 @@ section {
   bottom: 0;
   display: flex;
   align-items: center;
-  justify-content:space-between ;
+  justify-content: space-between;
 }
-.msg-input input{
+.msg-input input {
   background-color: #2e3238;
   height: 100%;
   width: 90%;
   margin: 0 2px;
   padding: 0 10px;
-  font-family: sans-serif,poppins;
+  font-family: sans-serif, poppins;
   color: white;
   font-size: medium;
   outline: none;
   border: 1px solid #2e3238;
   border-radius: 5px;
 }
-.msg-input i{
+.msg-input i {
   /* background-color: #1e293b; */
   color: #0072ff;
   font-size: x-large;
-  
 }
-.msg-input button{
+.msg-input button {
   border: none;
   background-color: transparent;
   cursor: pointer;
   padding: 2px 4px;
   margin-right: 60px;
   border-radius: 5px;
+}
+
+.user-data {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  height: 500px;
+  width: 400px;
+  background-color: #06b6d4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+.user-data img {
+  height: 200px;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.user-data p {
+  font-family: sans-serif;
+  padding: 10px 10px;
+  outline: #054253;
+  margin: 0 30px;
+}
+.user-profile-name {
+  font-size: x-large;
+  color: black;
+  font-weight: bold;
+}
+.user-data button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#profileImg {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
 }
