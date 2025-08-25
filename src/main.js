@@ -305,64 +305,6 @@ async function getUserProfile(uid) {
   }
 }
 
-// -------------------
-// Save Profile Function
-// -------------------
-async function saveProfile(userId, profileData) {
-  try {
-    // Reference to the user's document
-    const userDocRef = doc(db, "users", userId);
-
-    // Save or update the document
-    await setDoc(userDocRef, profileData, { merge: true });
-
-    console.log("Profile saved successfully!");
-  } catch (error) {
-    console.error("Error saving profile:", error);
-  }
-}
-
-// Example usage when user clicks Save button
-editBtn.addEventListener("click", async () => {
-  const user = auth.currentUser;
-  if (!user) return alert("Not signed in!");
-
-  // Collect data from inputs
-  const name = document.getElementById("user-profile-name").value;
-  const bio = document.getElementById("about-user").value;
-  const photoURL = document.getElementById("imgInput").value; // e.g., URL or base64
-
-  await saveProfile(user.uid, { name, bio, photoURL });
-});
-
-
-// -------------------
-// Fetch + Display Profile
-// -------------------
-onAuthStateChanged(auth, async (user) => {
-  if (user) {
-    try {
-      const userDocRef = doc(db, "users", user.uid);
-      const userDocSnap = await getDoc(userDocRef);
-
-      if (userDocSnap.exists()) {
-        const userData = userDocSnap.data();
-
-        // Update UI
-        userProfileName.textContent = userData.name || "";
-        aboutUser.textContent = userData.bio || "";
-        imgInput.src = userData.photoURL || "default.png";
-      } else {
-        console.log("No profile data found for user.");
-      }
-    } catch (error) {
-      console.error("Error fetching profile:", error);
-    }
-  } else {
-    console.log("No user signed in.");
-  }
-});
-
 
 // Chats Section
 // Active chats
